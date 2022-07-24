@@ -1,0 +1,136 @@
+html,body{
+height: 1000px;
+/* overflow-x:   hidden; */
+/*overflow-y: hidden;*/
+background-color: #F9F9F9;
+}
+
+.container{
+  /* height: 1000px; */
+  max-width: 1299px;
+}
+
+.div_first_row{
+  height:80px;
+  /* background-color: #DCD7C9; */
+  background-color: #570530
+}
+
+.div_second_row{
+  height:60px;
+  width: 100%;
+  background-color: #F7F7F7;
+  justify-content: center;
+  /*background-color: #DCD7C9;*/
+}
+
+.div_thirst_row{
+  /* height:900px; */
+  height: 100%;
+  /* background-color: #F0EBE3; */
+  background-color: #F7F7F7;
+}
+
+.div-logo-company{
+  width: 30%;
+  }
+
+.div_title_company{
+  font-family: 'Rubik Moonrocks';
+  /* font-size: 300px; */
+  text-align: center;
+  width: 40%;
+}
+
+.div-well-come-back{
+  justify-content: center;
+  text-align: center;
+}
+
+.div-manage-one-prod{
+  justify-content: center;
+  position : relative;
+  left  : 10%;
+}
+
+.div_log_reg{
+  width: 100px;
+  font-size: 20px;
+}
+
+.h1-text-login{
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Gulzar'
+}
+
+.div-login-main{
+  width: 800px;
+  position: relative;
+  left: 257px;
+}
+
+.p-text-login{
+  font-size: 40px;
+  font-family: 'Montserrat';
+}
+
+.control-label{
+  font-size: 25px;
+  font-family: 'Source+Serif+Pro';
+  font-weight: normal;
+}
+#submit{
+  font-size: 25px;
+  font-family: 'Source+Serif+Pro';
+}
+
+.id-header2-col1{
+  width: 985.5px;
+}
+.col-6{
+/* width: 80%; */
+/* height: 60px; */
+}
+
+#id-company{
+  height: 50%;
+  width : 50%;
+  font-size: 40px;
+  text-align: -webkit-center;
+  /* text-decoration: underline 1px; */
+  font-family: 'Great Vibes';
+  /*padding-top: 10px;*/
+  color : #F7F7F7;
+  position: relative;
+  top: 30%;
+}
+
+.btn_bar {
+  background: #DCD7C9;
+  background-image: -webkit-linear-gradient(top, #DCD7C9, #F0EBE3);
+  background-image: -moz-linear-gradient(top, #DCD7C9, #F0EBE3);
+  background-image: -ms-linear-gradient(top, #DCD7C9, #F0EBE3);
+  background-image: -o-linear-gradient(top, #DCD7C9, #F0EBE3);
+  background-image: linear-gradient(to bottom, #DCD7C9, #F0EBE3);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border: none;
+  font-family: Arial;
+  color: #eb90eb;
+  font-size: 12px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width:auto;
+
+}
+
+.btn_bar:hover {
+  background: #F0EBE3;
+  background-image: -webkit-linear-gradient(top, #F0EBE3, #DCD7C9);
+  background-image: -moz-linear-gradient(top, #F0EBE3, #DCD7C9);
+  background-image: -ms-linear-gradient(top, #F0EBE3, #DCD7C9);
+  background-image: -o-linear-gradient(top, #F0EBE3, #DCD7C9);
+  background-image: linear-gradient(to bottom, #F0EBE3, #DCD7C9);
+  text-decoration: none;
+}

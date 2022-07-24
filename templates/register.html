@@ -1,0 +1,61 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header2.html" %}
+
+  <!-- Page Header -->
+<div class="row container div-login-main">
+    <div class="col div-well-come-back">
+      <br><br><br><br><br><br><br><br><br>
+      <h1 style="font-size: 25px;font-family: 'Great Vibes';">Gracias por registrarte</h1>
+      <br><br>
+      <h1 style="font-family: 'Gulzar';font-size: 40px;">BIENVENIDO</h1>
+      <br><br>
+      <h1 style="font-size: 25px;font-family: 'Great Vibes';">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Natoque penatibus et magnis dis parturient montes</h1>
+    </div>
+    <div class="col">
+      <br><br><br><br><br><br><br><br>
+      <h1 class="h1-text-login">Registrarme</h1>
+      {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+               <p style="font-size: 12px;">{{ message }}</p>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        <div class="">
+          {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+        </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- <div class="col">
+    HOLA HOLA HOLA
+  <div class="row">
+    <div class="col">
+      <div class="row div_login">
+        <h1 class="h1-login">Log In</h1>
+          <span class="h1-login">Bienvenido!</span>
+      </div>
+    <div class="row col-lg-8 col-md-10 mx-auto content div_login">
+      {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+               <p>{{ message }}</p>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+          {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+    </div>
+  </div>
+  </div> -->
+
+
+{% include "footer.html" %}
+{% endblock %}

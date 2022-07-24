@@ -1,0 +1,116 @@
+.div-show-prod{
+width: 80%;
+}
+
+.card-price{
+  color: #950101;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.div-filtro-sex{
+  height: 30px;
+  background-color: #570530;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+
+}
+
+.list-group-item{
+  font-size: 12px;
+}
+
+.img-logo{
+height : 80px;
+position: relative;
+left: 190px;
+}
+
+.input-group{
+  justify-content:  center;
+  height: 40px;
+  width: 100%;
+  position: relative;
+  top: 10px;
+}
+
+.c-search{
+    width: 50%;
+    height: 40px;
+    font-size: x-large;
+    border: 1px solid #bcbcbc;
+    border-color: #570530;
+    font-size: 20px;
+    font-family: 'Rubik Moonrocks'
+}
+
+.f-search{
+  font-size: x-large;
+  width: 11%;
+  border: 1px solid #bcbcbc;
+  border-color: #570530;
+  font-size: 20px;
+  font-family: 'Rubik Moonrocks'
+}
+
+.c-formsearh{
+  width: 50%;
+}
+
+#h1-identificate{
+  font-size: 15px;
+  font-family: 'Rubik Moonrocks';
+  color: #F7F7F7;
+}
+
+.form-add{
+  font-size: 12px;
+  font-family: 'Rubik Moonrocks';
+  position: relative;
+  left: 220px;
+}
+
+.form-add2{
+  font-size: 12px;
+  font-family: 'Rubik Moonrocks';
+}
+
+.h1-text-manage{
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Gulzar'
+}
+
+.h12-text-manage{
+  font-size: 40px;
+  font-family: 'Gulzar'
+}
+
+.btn-manage{
+    position: relative;
+    left: 30%;
+}
+
+.div-form-car {
+    font-size: 12px;
+    font-family: 'Rubik Moonrocks';
+}
+
+.but-form-car{
+ width: 100%;
+}
+
+.div-my-car{
+ text-align: center;
+ height: 80px;
+}
+
+.id-card-title{
+  font-size: 50px;
+  font-family: 'Great Vibes';
+  text-align: center;
+  height: 80%;
+  position: relative;
+  top: 5%;
+}

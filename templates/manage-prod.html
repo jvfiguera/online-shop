@@ -1,0 +1,89 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header2.html" %}
+
+  <!-- Page Header -->
+<br><br>
+<div class="row container div-login-main">
+    <div class="col">
+        <br><br>
+        <h1 class="h1-text-manage">Agregar nuevos  productos</h1> <br>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+               <p style="font-size: 12px;">{{ message }}</p>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          <div class="row">
+
+            <form class="form-add" name="FrmAddProd" action="/fn_manage_onlineshop" method="post">
+                <table>
+                    <tr>
+                        <td> {{ form.categoria.label}} </td>
+                        <td> {{ form.categoria(choices=CATEGORIAS_LIST) }}</td>
+                    </tr>
+                    <tr>
+                        <td> {{ form.desc_small_prod.label}} </td>
+                        <td> {{ form.desc_small_prod }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.desc_large_prod.label(size=50)}}</td>
+                        <td> {{ form.desc_large_prod }} </td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.img_prod.label}} </td>
+                        <td>{{ form.img_prod }}</td>
+                    </tr>
+                    <!--<tr>
+                        <td>{{ form.sex_prod.label}} </td>
+                        <td>{{ form.sex_prod }}</td>
+                    </tr>-->
+                    <tr>
+                        <td>{{ form.target_prod.label}} </td>
+                        <td>{{ form.target_prod }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.price_prod.label}} </td>
+                        <td>{{ form.price_prod }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.size_L_count.label}} </td>
+                        <td>{{ form.size_L_count }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.size_S_count.label}} </td>
+                        <td>{{ form.size_S_count }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.size_M_count.label}} </td>
+                        <td>{{ form.size_M_count }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.size_XL_count.label}}</td>
+                        <td> {{ form.size_XL_count }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.size_XXL_count.label}}</td>
+                        <td>{{ form.size_XXL_count }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.size_3XL_count.label}} </td>
+                        <td>{{ form.size_3XL_count }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.size_XLS_count.label}}</td>
+                        <td> {{ form.size_XLS_count() }}</td>
+                    </tr>
+                </table>
+                     {{ form.submit(class_="btn btn-primary") }}
+             </form>
+            </div>
+            <!--{{ wtf.quick_form(form, horizontal_columns=('lg', 2, 5), novalidate=True, button_map={"submit": "primary"}) }}-->
+    </div>
+</div>
+
+{% include "footer.html" %}
+{% endblock %}

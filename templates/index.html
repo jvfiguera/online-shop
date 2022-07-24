@@ -1,0 +1,164 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header.html" %}
+
+<div class="container">
+        <div class="row div_first_row">
+             <div class="col-md-auto div-logo-company">
+                  <img class="img-logo" src="/static/images/GrexyFun.png" alt="img-logo">
+              </div>
+            <div class="col-md-auto div_title_company">
+                <h1 id="id-company">{{company_name}}</h1>
+            </div>
+            <div class="col-md-auto">
+                 <h1 id="h1-identificate">Hola : {{ full_name_user }}</h1>
+                <ul class="nav nav-pills justify-content-end">
+                    {% if full_name_user =='Identificate': %}
+                      <li class="nav-item">
+                          <a class="btn btn-primary float-right btn_bar" href="{{ url_for('fn_login') }}">Login</a>
+                      </li>
+                    {% endif %}
+                     {% if full_name_user !='Identificate': %}
+                        <li class="nav-item">
+                            <a class="btn btn-primary float-right btn_bar" href="{{ url_for('fn_logout') }}">Logout</a>
+                        </li>
+                    {% endif %}
+                    {% if full_name_user =='Identificate': %}
+                        <li class="nav-item">
+                            <a class="btn btn-primary float-right btn_bar" href="{{ url_for('fn_register')}}">Registrarme</a>
+                        </li>
+                    {% endif %}
+                     <!--    If user id is 1 then they can see the Gestionar Tienda button -->
+                    {% if current_user.id == 1 and full_name_user !='Identificate': %}
+                        <li class="nav-item">
+                            <a class="btn btn-primary float-right btn_bar" href="{{ url_for('fn_manage_onlineshop') }}">Gestionar Tienda </a>
+                        </li>
+                    {% endif %}
+
+                    {% if mycar !=0 %}
+                        <li class="nav-item">
+                            <a class="btn btn-primary float-right btn_bar" href="{{ url_for('fn_show_user_card') }}"> <i class="fa-solid fa-cart-shopping"></i> {{ mycar }}</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="btn btn-primary float-right btn_bar" href="{{ url_for('fn_login') }}" > <i class="fa-solid fa-cart-shopping"></i> {{ mycar }}</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div class="row div_second_row">
+            <form name="f-search" class="c-formsearh" action="/fn_search"  method="post">
+                <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary f-search" type="submit" id="button-addon1" >Buscar</button>
+                <input name="inp_search" text" class="form-control c-search" placeholder="Que estas buscando ?" aria-label="Example text with button addon" aria-describedby="button-addon1">
+              </div>
+            </form>
+        </div>
+        <div class="row div_thirst_row">
+            <div class="col">
+              <form name="FrmFilters" action="/fn_apply_filters" method="post">
+                    <div class="">
+                      <br>
+                       <div class="div-filtro-sex">
+                          Filtrar Por
+                       </div>
+                      <ul class="list-group">
+                            <li class="list-group-item">
+                              <input name ="chk_sexo" class="form-check-input me-1" type="radio" value="All" aria-label="..." checked>
+                                Todo tipo de Moda
+                            </li>
+                            <li class="list-group-item">
+                              <input name ="chk_sexo" class="form-check-input me-1" type="radio" value="Hombre" aria-label="...">
+                                Moda de Caballeros
+                            </li>
+                            <li class="list-group-item">
+                              <input name="chk_sexo" class="form-check-input me-1" type="radio" value="Mujer"  aria-label="...">
+                                Moda de Mujer
+                            </li>
+                            <li class="list-group-item">
+                              <input name="chk_sexo" class="form-check-input me-1" type="radio" value="Niño"  aria-label="...">
+                                Moda para niños
+                            </li>
+                            <li class="list-group-item">
+                              <input name="chk_sexo" class="form-check-input me-1" type="radio" value="Niña"  aria-label="...">
+                                Moda para niñas
+                            </li>
+                      </ul>
+                    </div>
+
+                    <div class="">
+                      <br>
+                       <div class="div-filtro-sex">
+                          Tallas
+                       </div>
+                      <ul class="list-group">
+                            <li class="list-group-item">
+                              <input name="chk_size" class="form-check-input me-1" type="radio" value="All" aria-label="..." checked>
+                              Todas las tallas
+                            </li>
+                            <li class="list-group-item">
+                              <input name="chk_size" class="form-check-input me-1" type="radio" value="L" aria-label="...">
+                              L
+                            </li>
+                            <li class="list-group-item">
+                              <input name="chk_size" class="form-check-input me-1" type="radio" value="S" aria-label="...">
+                              S
+                            </li>
+                            <li class="list-group-item">
+                              <input name="chk_size" class="form-check-input me-1" type="radio" value="M" aria-label="...">
+                              M
+                            </li>
+                            <li class="list-group-item">
+                              <input name="chk_size" class="form-check-input me-1" type="radio" value="XL" aria-label="...">
+                              XL
+                            </li>
+                            <li class="list-group-item">
+                              <input name="chk_size" class="form-check-input me-1" type="radio" value="XXL" aria-label="...">
+                              XXL
+                            </li>
+                            <li class="list-group-item">
+                              <input name="chk_size" class="form-check-input me-1" type="radio" value="3XL" aria-label="...">
+                              3XL
+                            </li>
+                            <li class="list-group-item">
+                              <input name="chk_size" class="form-check-input me-1" type="radio" value="XS" aria-label="...">
+                              XS
+                            </li>
+                      </ul>
+                    </div>
+                    <br>
+                    <label for="customRange2" class="form-label">Rango de Precios (Ref.)</label>
+                    <input type="range" class="form-range" min="5" max="100" id="customRange2">
+                    <input class="btn btn-danger btn-filter btn_bar set active" type="submit" value="Buscar">
+                </form>
+            </div>
+              <div class="col-6 div-show-prod">
+                <br>
+                <div class="row">
+                  {% for idx in range(0,prod_list_shop|length,1): %}
+                    <div class="col">
+                      <div class="card" style="width: 244.8px;padding-left: 0px;padding-right: 0px;">
+                        <img src="{{ prod_list_shop[idx].img_prod}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ prod_list_shop[idx].desc_small_prod}}</h5>
+                          <p class="card-text">{{ prod_list_shop[idx].desc_large_prod.capitalize() }}</p>
+                          <h5 class="card-title card-price">Ref: {{ prod_list_shop[idx].price_prod}}</h5>
+                          <a href="{{ url_for('fn_show_product', prod_id=prod_list_shop[idx].prod_id) }}" class="btn btn-primary">Ver Detalles</a>
+                            {% if current_user.id == 1 and full_name_user !='Identificate': %}
+                                <a href="{{ url_for('fn_manage_one_product', prod_id=prod_list_shop[idx].prod_id) }}" class="btn btn-primary btn-manage">Gestionar</a>
+                            {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                    <br><br><br><br>
+                  {% endfor %}
+                </div>
+              </div>
+        </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+{% include "footer.html" %}
+{% endblock %}

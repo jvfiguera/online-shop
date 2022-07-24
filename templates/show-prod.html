@@ -1,0 +1,91 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header2.html" %}
+
+  <!-- Page Header -->
+<br><br><br>
+<div class="row container div-login-main">
+    <div class="col-md-auto
+     div-well-come-back">
+        <img src="{{ prod_list_det[0].img_prod}}" class="img-fluid" style="border: solid 1px;border-color: #570530;" alt="...">
+        <br><br>
+        <h5 class="card-title">{{ prod_list_det[0].desc_small_prod}}</h5>
+        <p class="card-text" style="font-size: 16px;">{{ prod_list_det[0].desc_large_prod.capitalize() }}</p>
+        <h5 class="card-title card-price" style="font-size: 15px;color : #3D6CB9;">Total disponibles: {{ prod_list_det[0].total_count }}</h5>
+        <h5 class="card-title card-price" style="font-size: 25px;">Ref: {{ prod_list_det[0].price_prod}}</h5>
+    </div>
+    <div class="col-md-auto">
+        <h5 class="card-title">Tallas disponibles</h5> <br>
+        <ul class="list-group">
+            <li class="list-group-item">
+                {% if prod_list_det[0].size_L_count > 0 %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" checked disabled="True">
+                {% else %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" disabled="True">
+                {% endif %}
+                L
+            </li>
+            <li class="list-group-item">
+                {% if prod_list_det[0].size_S_count > 0 %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" checked disabled="True">
+                {% else %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" disabled="True">
+                {% endif %}
+                S
+            </li>
+            <li class="list-group-item">
+                {% if prod_list_det[0].size_M_count > 0 %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" checked disabled="True">
+                {% else %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" disabled="True">
+                {% endif %}
+                M
+            </li>
+            <li class="list-group-item">
+                {% if prod_list_det[0].size_XL_count > 0 %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" checked disabled="True">
+                {% else %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" disabled="True">
+                {% endif %}
+                XL
+            </li>
+            <li class="list-group-item">
+                {% if prod_list_det[0].size_XXL_count > 0 %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" checked disabled="True">
+                {% else %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" disabled="True">
+                {% endif %}
+                XXL
+            </li>
+            <li class="list-group-item">
+                {% if prod_list_det[0].size_3XL_count > 0 %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" checked disabled="True">
+                {% else %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" disabled="True">
+                {% endif %}
+                3XL
+            </li>
+            <li class="list-group-item">
+                {% if prod_list_det[0].size_XLS_count > 0 %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" checked disabled="True">
+                {% else %}
+                <input name="chk_size" class="form-check-input me-1" type="checkbox" disabled="True">
+                {% endif %}
+                XLS
+            </li>
+        </ul>
+        <br>
+            <form class="form-add2" name="FrmAddProd" action="{{ url_for('fn_show_product', prod_id=prod_list_det[0].prod_id) }}" method="post">
+                {{ form.cantidad_req.label}}
+                {{ form.cantidad_req }} <br><br>
+                {{ form.submit(class_="btn btn-primary but-form-car") }}
+            </form>
+    </div>
+
+
+</div>
+
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header2.html" %}
+
+  <!-- Page Header -->
+<div class="row container div-login-main">
+    <div class="col div-well-come-back">
+      <br><br><br><br><br><br><br><br><br>
+      <h1 style="font-size: 25px;font-family: 'Great Vibes';">Nos agrada volver a verte</h1>
+      <br><br>
+      <h1 style="font-family: 'Gulzar';font-size: 40px;">BIENVENIDO</h1>
+      <br><br>
+      <h1 style="font-size: 25px;font-family: 'Great Vibes';">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Natoque penatibus et magnis dis parturient montes</h1>
+    </div>
+    <div class="col">
+      <br><br><br><br><br><br><br><br>
+      <h1 class="h1-text-login">Acceso a mi Cuenta</h1>
+      {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+               <p style="font-size: 12px;">{{ message }}</p>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+          {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+
+    </div>
+
+  </div>
+
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header2.html" %}
+
+<div class="row div-my-car">
+    <h1 class="id-card-title" >Mi Carrito</h1>
+</div>
+<div class="row" style="text-align: -webkit-center;">
+    <div class="col-6 div-show-prod">
+                <br>
+                <div class="row">
+                  {% for idx in range(0,user_card_toshow_list|length,1): %}
+                    <div class="col">
+                      <div class="card" style="width: 244.8px;padding-left: 0px;padding-right: 0px;">
+                        <img src="{{ user_card_toshow_list[idx].img_prod}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ user_card_toshow_list[idx].desc_small_prod}}</h5>
+                          <p class="card-text">{{ user_card_toshow_list[idx].desc_large_prod.capitalize() }}</p>
+                          <h5 class="card-title card-price">Ref: {{ user_card_toshow_list[idx].price_prod}}</h5>
+                          <a href="#" class="btn btn-primary">Hacer pedido</a>
+                            <a href="#" class="btn btn-primary">Eliminar del Carrito</a>
+                        </div>
+                      </div>
+                    </div>
+                    <br><br><br><br>
+                  {% endfor %}
+                </div>
+
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+{% include "footer.html" %}
+{% endblock %}
