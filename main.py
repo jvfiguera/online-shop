@@ -322,7 +322,7 @@ def fn_manage_onlineshop():
                            ,CATEGORIAS_LIST     =CATEGORIAS_LIST
                            )
 
-@app.route("/fn_manage_one_product/<prod_id>'",methods=["GET","POST"])
+@app.route("/fn_manage_one_product/<prod_id>",methods=["GET","POST"])
 @admin_only
 def fn_manage_one_product(prod_id):
     global prod_list_det_glb, CATEGORIA_DEFAULT_TUPLA,CATEGORIAS_LIST,MODA_LIST,MODA_DEFAULT_TUPLA

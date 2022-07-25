@@ -148,7 +148,7 @@
                           <h5 class="card-title card-price">Ref: {{ prod_list_shop[idx].price_prod}}</h5>
                           <a href="{{ url_for('fn_show_product', prod_id=prod_list_shop[idx].prod_id) }}" class="btn btn-primary">Ver Detalles</a>
                             {% if current_user.id == 1 and full_name_user !='Identificate': %}
-                                <a href="{{ url_for('fn_manage_one_product', prod_id=prod_list_shop[idx].prod_id) }}" class="btn btn-primary btn-manage">Gestionar</a>
+                                <a href="{{ url_for('fn_manage_one_product', prod_id=prod_list_shop[idx].prod_id)}}" class="btn btn-primary btn-manage">Gestionar</a>
                             {% endif %}
                         </div>
                       </div>
