@@ -392,9 +392,11 @@ def fn_show_user_card():
                            ,full_name_user          =full_name_user
                            ,user_card_toshow_list   =user_card_toshow_list
                            )
-
-if __name__ == '__main__':
-    fn_get_categories(pCategory='')
-    fn_get_list_products(pTarget='All'
+fn_get_categories(pCategory='')
+fn_get_list_products(pTarget='All'
                          ,pSize='All')
+if __name__ == '__main__':
+    # fn_get_categories(pCategory='')
+    # fn_get_list_products(pTarget='All'
+    #                      ,pSize='All')
     app.run(debug=True,port=5001)
